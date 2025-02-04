@@ -127,6 +127,11 @@ header nav ul li.actif a
     color: #2ec4b6;
 }
 
+/* Contenu principal */
+main {
+    padding: 0 5%; /* 5% à gauche et à droite */
+}
+
 /* Pied de page du site */
 footer {
     text-align: center;
@@ -167,4 +172,36 @@ footer nav ul li img:hover {
     100% {
         transform: scale(1);
     }
+}
+
+/* Page contact */
+.page-contact ul.contacts {
+    list-style-type: none;
+}
+
+.page-contact ul.contacts li {
+    margin-bottom: .5em;
+}
+
+.page-contact ul.contacts a {
+    padding-left: 30px;
+    background-image: url("../image/phone.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px; /* largeur hauteur */
+    background-position: 0 2px; /* position horizontale verticale */
+}
+
+/* Lien qui commence par "mailto" */
+.page-contact ul.contacts a[href^="mailto"] {
+    background-image: url("../image/mail.png");
+}
+
+/* Lien qui contient "twitter" */
+.page-contact ul.contacts a[href*="twitter"] {
+    background-image: url("../image/twitter.png");
+}
+
+/* Lien qui contient "facebook" */
+.page-contact ul.contacts a[href*="facebook"] {
+    background-image: url("../image/facebook.png");
 }
