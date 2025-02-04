@@ -15,6 +15,7 @@
     font-weight: 400;
     src: url('../fonts/open-sans-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-italic - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -23,6 +24,7 @@
     font-weight: 400;
     src: url('../fonts/open-sans-v40-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-800 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -32,11 +34,8 @@
     src: url('../fonts/open-sans-v40-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-
 * {
-
     box-sizing: border-box;
-
 }
 
 body {
@@ -44,15 +43,17 @@ body {
     color: #011627;
     font-size: 1rem;
     line-height: 1.4;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
     padding: 0;
     margin: 0;
 }
 
-
-h1 h2 h3 .logo {
-    font-family: 'Changa One', cursive;
+h1,
+h2,
+h3,
+.logo {
+    font-family: "Changa One", cursive;
     font-weight: 400;
 }
 
@@ -70,15 +71,15 @@ p {
     line-height: 1.5;
 }
 
-a{
-    color: #e71d36;
+a {
+    color: #e71d36 ;
     text-decoration: none;
 }
 
 /* Header */
 header {
     background-color: #011627;
-    padding-top: 10px;
+    padding: 10px;
     margin-bottom: 30px;
 }
 
@@ -96,30 +97,74 @@ header .metier {
 }
 
 /* Menu navigation */
-header nav ul {
+header nav {
     text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
     padding: 0;
 }
 
-header nav ul li a {
-    color: #fdfffc;
-    font-weight: 000;
+header nav ul li {
+    display: inline-block;
+    margin: 0 1em;
 }
 
 header nav ul .hide {
     display: none;
 }
 
+header nav ul li a {
+    color: #fdfffc;
+    font-weight: 800;
+}
+
+/* Liens survolés et actifs en bleu */
 header nav ul li a:hover,
-.header nav ul li.active a
+header nav ul li.actif a
 {
     color: #2ec4b6;
 }
 
-/* footer */
-
+/* Pied de page du site */
 footer {
     text-align: center;
-    margin: 50px 0;
+    margin: 50px 0; /* 50px en haut et en bas */
+}
 
+footer nav ul {
+    list-style-type: none; /* On enlève les puces */
+    padding: 0; /* On enlève les marges intérieures */
+}
+
+footer nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer nav ul li img {
+    width: 50px;
+    height: 50px;
+    filter: grayscale(100%);
+    transition: all 1s;
+    animation: beat 1s infinite;
+}
+
+footer nav ul li img:hover {
+    filter: grayscale(0);
+    transform: rotate(-10deg);
+}
+
+/* Simule un battement de coeur */
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
