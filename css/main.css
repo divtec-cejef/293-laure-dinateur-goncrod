@@ -101,11 +101,25 @@ header nav ul {
     padding: 0;
 }
 
-header nav ul li {
-    display: inline-block;
-    margin: 0 1em;
+header nav ul li a {
+    color: #fdfffc;
+    font-weight: 000;
 }
 
 header nav ul .hide {
     display: none;
+}
+
+header nav ul li a:hover,
+.header nav ul li.active a
+{
+    color: #2ec4b6;
+}
+
+/* footer */
+
+footer {
+    text-align: center;
+    margin: 50px 0;
+
 }
